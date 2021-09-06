@@ -1,0 +1,1 @@
+const MIOR = artifacts.require("MIOR");

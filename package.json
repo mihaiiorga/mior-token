@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "dotenv": "^10.0.0"
+  },
+  "name": "mior-token",
+  "version": "1.0.0",
+  "description": "ERC20 Token to be used for Tests/Dev",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihaiiorga/mior-token.git"
+  },
+  "author": "Mihai Iorga <mihai7221@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mihaiiorga/mior-token/issues"
+  },
+  "homepage": "https://github.com/mihaiiorga/mior-token#readme"
+}
