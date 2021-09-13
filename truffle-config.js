@@ -22,7 +22,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 const mnemonic = process.env.DEV_MNEMONIC
 const infuraProjectId = process.env.INFURA_PROJECT_ID
-
+const etherscanApiKey = process.env.ETHERSCAN_API_KEY
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -113,6 +113,12 @@ module.exports = {
       // }
     }
   },
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    etherscan: etherscanApiKey
+  }
 
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
