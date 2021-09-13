@@ -46,9 +46,9 @@ module.exports = {
     // options below to some value.
     //
     development: {
-     host: "127.0.0.1",
-     port: 8545,
-     network_id: "*",
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*",
     },
     // Another network with more advanced options...
     // advanced: {
@@ -68,6 +68,23 @@ module.exports = {
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
+    goerli: {
+      provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
+      network_id: 5,       // Goerli's id
+      gas: 8000000,        // Goerli has a lower block limit than mainnet
+      confirmations: 0,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
+    matic: {
+      provider: () => new HDWalletProvider(mnemonic, 'https://rpc-mumbai.matic.today'),
+      network_id: 80001,
+      gas: 8000000,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      gasPrice: 0
     },
     // Useful for private networks
     // private: {
@@ -108,13 +125,13 @@ module.exports = {
   // $ truffle migrate --reset --compile-all
   //
   // db: {
-    // enabled: false,
-    // host: "127.0.0.1",
-    // adapter: {
-    //   name: "sqlite",
-    //   settings: {
-    //     directory: ".db"
-    //   }
-    // }
+  // enabled: false,
+  // host: "127.0.0.1",
+  // adapter: {
+  //   name: "sqlite",
+  //   settings: {
+  //     directory: ".db"
+  //   }
+  // }
   // }
 };
