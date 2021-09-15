@@ -27,7 +27,17 @@ const etherscanApiKey = process.env.ETHERSCAN_API_KEY
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-module.exports = {
+module.exports = { 
+  /**
+  * contracts_build_directory tells Truffle where to store compiled contracts
+  */
+  contracts_build_directory: './build/ethereum-contracts',
+
+  /**
+  * contracts_directory tells Truffle where the contracts you want to compile are located
+  */
+  contracts_directory: './contracts/ethereum',
+
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -118,7 +128,7 @@ module.exports = {
   ],
   api_keys: {
     etherscan: etherscanApiKey
-  }
+  },
 
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
@@ -130,14 +140,14 @@ module.exports = {
   // After you backed up your artifacts you can utilize db by running migrate as follows: 
   // $ truffle migrate --reset --compile-all
   //
-  // db: {
-  // enabled: false,
-  // host: "127.0.0.1",
-  // adapter: {
-  //   name: "sqlite",
-  //   settings: {
-  //     directory: ".db"
-  //   }
-  // }
-  // }
+  db: {
+  enabled: false,
+  host: "127.0.0.1",
+  adapter: {
+    name: "sqlite",
+    settings: {
+      directory: ".db"
+    }
+  }
+  }
 };

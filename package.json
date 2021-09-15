@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "@openzeppelin/contracts": "^4.3.1",
-    "@truffle/hdwallet-provider": "^1.5.0",
-    "dotenv": "^10.0.0"
+
   },
   "name": "mior-token",
   "version": "1.0.0",
@@ -12,10 +10,17 @@
     "test": "test"
   },
   "devDependencies": {
-    "truffle-plugin-verify": "^0.5.15"
+    "truffle-plugin-verify": "^0.5.15",
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "@openzeppelin/contracts": "^4.3.1",
+    "dotenv": "^10.0.0",
+    "@maticnetwork/maticjs": "^2.0.40"
   },
   "scripts": {
-    "test": "truffle test"
+    "test": "truffle test",
+    "test:polygon": "truffle test --config=truffle-config.polygon.js --network=$npm_config_network",
+    "compile:polygon": "truffle compile --config=truffle-config.polygon.js",
+    "migrate:polygon": "truffle migrate --config=truffle-config.polygon.js --network=$npm_config_network"
   },
   "repository": {
     "type": "git",
