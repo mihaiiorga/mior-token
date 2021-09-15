@@ -4,6 +4,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 require('dotenv').config();
 const mnemonic = process.env.DEV_MNEMONIC
 const infuraProjectId = process.env.INFURA_PROJECT_ID
+const polygonscanApiKey = process.env.POLYGONSCAN_API_KEY
 
 module.exports = {
 
@@ -96,6 +97,12 @@ module.exports = {
     solc: {
       version: "0.8.2"
     }
+  },
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    polygonscan: polygonscanApiKey
   },
   db: {
     enabled: true
